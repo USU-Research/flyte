@@ -29,6 +29,10 @@ flyteadmin:
       memory: 50Mi
   # -- Default regex string for searching configuration files
   configPath: /etc/flyte/config/*.yaml
+  initialProjects:
+    - flytesnacks
+    - flytetester
+    - flyteexamples
   # -- Service settings for Flyteadmin
   service:
     annotations:
@@ -488,7 +492,7 @@ configmap:
         thirdPartyConfig:
           flyteClient:
             clientId: flytectl
-            redirectUri: https://localhost:53593/callback
+            redirectUri: http://localhost:53593/callback
             scopes:
               - offline
               - all
